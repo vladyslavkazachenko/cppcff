@@ -1,0 +1,14 @@
+include_directories("${CMAKE_SOURCE_DIR}/src")
+
+add_executable(cppcff_typedefs_testsuite cppcff_typedefs_testsuite.cpp)
+target_link_libraries(cppcff_typedefs_testsuite gtest)
+target_link_libraries(cppcff_typedefs_testsuite pthread)
+add_test(NAME cppcff_typedefs_testsuite 
+	COMMAND cppcff_typedefs_testsuite)
+	
+add_executable(cppcff_parse_header_testsuite cppcff_parse_header_testsuite.cpp)
+target_link_libraries(cppcff_parse_header_testsuite cppcff)
+target_link_libraries(cppcff_parse_header_testsuite gtest)
+target_link_libraries(cppcff_parse_header_testsuite pthread)
+add_test(NAME cppcff_parse_header_testsuite 
+	COMMAND cppcff_parse_header_testsuite)

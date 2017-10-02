@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 3.9.2)
+project(cppcff)
+enable_language(CXX)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+enable_testing()
+add_subdirectory(test)
+add_subdirectory(src)
