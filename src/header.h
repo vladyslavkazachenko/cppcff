@@ -15,4 +15,10 @@ namespace cppcff
 		OffSize offSize_;
 	};
 	int ParseHeader(const std::uint8_t * const data, size_t dataSize, Header &header);
+	
+	namespace parse_header
+	{
+		static const int kErrorData = 1;
+		static const int kErrorDataSize = 2;
+	}
 }

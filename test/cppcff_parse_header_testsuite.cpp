@@ -74,7 +74,7 @@ TEST(cppcff_parse_header, failed_nullptr)
 {
 	cppcff::Header header;
 	int result = cppcff::ParseHeader(nullptr, 0, header);
-    ASSERT_EQ(1, result);
+    ASSERT_EQ(cppcff::parse_header::kErrorData, result);
 }
 
 TEST(cppcff_parse_header, failed_dataSize0) 
@@ -87,7 +87,7 @@ TEST(cppcff_parse_header, failed_dataSize0)
 		2        //offSize
 	};
 	int result = cppcff::ParseHeader(data, 0, header);
-    ASSERT_EQ(2, result);
+    ASSERT_EQ(cppcff::parse_header::kErrorDataSize, result);
 }
 
 TEST(cppcff_parse_header, failed_dataSize1) 
@@ -100,7 +100,7 @@ TEST(cppcff_parse_header, failed_dataSize1)
 		2        //offSize
 	};
 	int result = cppcff::ParseHeader(data, 1, header);
-    ASSERT_EQ(2, result);
+    ASSERT_EQ(cppcff::parse_header::kErrorDataSize, result);
 }
 
 int main(int argc, char **argv)

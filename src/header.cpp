@@ -11,14 +11,14 @@ namespace cppcff
 		if(!data)
 		{
 			std::wclog << "data is nullptr" << std::endl;
-			result = 1;
+			result = parse_header::kErrorData;
 		}
 		else
 		{
 			if(dataSize < sizeof(header))
 			{
 				std::wclog << "dataSize is too small" << std::endl;
-				result = 2;
+				result = parse_header::kErrorDataSize;
 			}
 			else
 			{
